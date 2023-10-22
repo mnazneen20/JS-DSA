@@ -1,5 +1,7 @@
 // devides the array to half continously and decreases
 // the number of elements into half on every iteration.
+// best case O(1) when target is in the middle index.
+// worst case O(logn)
 // BigO(log n)
 
 function binarySearch(arr, target) {
@@ -7,7 +9,6 @@ function binarySearch(arr, target) {
     let end = arr.length - 1;
 
     while (start <= end) {
-        console.log('loop count')
         const mid = Math.floor((start + end) / 2)
         if (arr[mid] === target) return mid;
 
@@ -39,6 +40,4 @@ function reccursiveBinary(arr, start, end, target) {
         return reccursiveBinary(arr, start, mid - 1, target)
     }
 }
-
-
-console.log(reccursiveBinary([-5, 2, 4, 6, 10], 0, 4, 30))
+// console.log(reccursiveBinary([-5, 2, 4, 6, 10], 0, 4, 30))
